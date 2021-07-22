@@ -52,12 +52,14 @@ seller_id int references seller(id)
 CREATE TABLE COD(
 customer_id int references user(id),
 product_id int references product(id),
+amount int references delivery(amount)
 payment_type varchar(50)
 );
 CREATE TABLE Online_Payment(
 customer_id int references user(id),
 product_id int references product(id),
 payment_method varchar(50),
+amount int references delivery(amount)
 transaction_id varchar(50),
 status varchar(50)
 );
